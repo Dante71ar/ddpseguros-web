@@ -1302,10 +1302,60 @@
 
         <!-- Formulario -->
         <div>
-          <form
+                    <form
             method="post"
-            action="#"
+            action="https://formsubmit.co/dantepuchetti@ddpseguros.com.ar"
           >
+            <!-- Campos visibles -->
+            <div class="form-field">
+              <label for="nombre">Nombre y apellido</label>
+              <input id="nombre" name="nombre" type="text" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input id="telefono" name="telefono" type="tel">
+            </div>
+
+            <div class="form-field">
+              <label for="tipo-consulta">Tipo de consulta</label>
+              <select id="tipo-consulta" name="tipo-consulta">
+                <option value="">Selecciona una opción…</option>
+                <option value="vida-ahorro">Seguros de Vida y Ahorro</option>
+                <option value="vida-obligatorio">Vida Obligatorio / Convenios</option>
+                <option value="patrimoniales">Seguros Patrimoniales</option>
+                <option value="asesoria-financiera">Asesoría financiera</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Contame brevemente tu situación o lo que necesitás…"></textarea>
+            </div>
+
+            <!-- Configuración FormSubmit -->
+            <input type="hidden" name="_subject" value="Nueva consulta desde la web de DDP Seguros">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://www.ddpseguros.com.ar/#contacto">
+
+            <div class="form-field">
+              <button type="submit" class="btn btn-primary">
+                Enviar consulta
+              </button>
+              <div class="form-footnote">
+                Al enviar tu consulta autorizás el uso de estos datos para que pueda responderte. No se compartirán con
+                terceros sin tu consentimiento.
+              </div>
+            </div>
+          </form>
+
             <!--
               NOTA:
               - Puedes usar un servicio tipo FormSubmit, Getform, etc.
