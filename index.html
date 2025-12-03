@@ -176,44 +176,50 @@
       background-color: #ffffff;
       border-radius: 2px;
     }
-    /* PROMO STRIP */
+        /* PROMO STRIP */
 
     .promo-strip {
       background: linear-gradient(90deg, #f97316, #fb923c);
       color: #111827;
     }
 
-    .promo-strip-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 8px 0;
-      font-size: 13px;
+    .promo-strip .container {
+      padding: 8px 16px 10px;
     }
 
-    .promo-strip-badge {
+    .promo-strip-marquee {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .promo-strip-track {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 2px 8px;
-      margin-right: 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      background-color: #fef3c7;
-      color: #92400e;
+      animation: promo-marquee 18s linear infinite;
     }
 
-    .promo-strip-text {
-      font-weight: 500;
+    .promo-strip-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px; /* texto más grande */
+      font-weight: 700;
+      padding-right: 80px; /* espacio entre repeticiones */
     }
 
     .promo-strip-highlight {
-      font-weight: 700;
+      font-weight: 800;
+      text-decoration: underline;
+    }
+
+    .promo-icon {
+      font-size: 24px;
+    }
+
+    .promo-strip-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 6px;
     }
 
     .btn-light {
@@ -227,6 +233,15 @@
       background-color: #fef3c7;
       transform: translateY(-1px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    @keyframes promo-marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     /* HERO */
@@ -953,21 +968,39 @@
       </div>
     </div>
   </header>
-  <section class="promo-strip">
-    <div class="container promo-strip-inner">
-      <div>
-        <span class="promo-strip-badge">Promo vigente</span>
-        <span class="promo-strip-text">
-          Seguro de Hogar San Cristóbal con <span class="promo-strip-highlight">35% OFF</span> en la prima.
-        </span>
+   <section class="promo-strip">
+    <div class="container">
+      <div class="promo-strip-marquee">
+        <div class="promo-strip-track">
+          <div class="promo-strip-item">
+            <span class="promo-icon">📢</span>
+            <span>
+              Promo vigente · Seguro de Hogar San Cristóbal con
+              <span class="promo-strip-highlight">35% OFF</span>
+              en la prima.
+            </span>
+            <span class="promo-icon">🚨</span>
+          </div>
+          <div class="promo-strip-item">
+            <span class="promo-icon">📢</span>
+            <span>
+              Promo vigente · Seguro de Hogar San Cristóbal con
+              <span class="promo-strip-highlight">35% OFF</span>
+              en la prima.
+            </span>
+            <span class="promo-icon">🚨</span>
+          </div>
+        </div>
       </div>
-      <div>
+
+      <div class="promo-strip-cta">
         <a class="btn btn-sm btn-light" href="#promo-hogar-sancristobal">
           Ver detalles de la promoción
         </a>
       </div>
     </div>
   </section>
+
 
   <!-- HERO / INICIO -->
   <section id="inicio" class="hero">
